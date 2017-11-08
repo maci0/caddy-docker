@@ -5,6 +5,7 @@ LABEL caddy_version="0.9.4" architecture="amd64"
 
 ARG plugins=git
 
+RUN yum clean all && yum update
 RUN yum -y install openssh-client git tar curl
 
 RUN curl --silent --show-error --fail --location \
