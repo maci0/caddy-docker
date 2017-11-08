@@ -5,8 +5,8 @@ LABEL caddy_version="0.9.4" architecture="amd64"
 
 ARG plugins=git
 
-RUN yum clean all && yum update
-RUN yum -y install openssh-client git tar curl
+RUN yum clean all && yum -y update
+RUN yum -y install openssh-client git tar curl && yum clean all
 
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
